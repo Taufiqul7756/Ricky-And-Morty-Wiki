@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 import Bubble from "../../images/HomePage/bubble.png";
@@ -14,18 +13,46 @@ import "./Home.css";
 
 const Home = () => {
   const [characters, setCharacter] = useState([]);
-  const [episode, setEpisode] = useState([]);
-  const getData = async () => {
+  const [episodes, setEpisode] = useState([]);
+  const [locations, setLocation] = useState([]);
+
+  // Characters data Fetching
+  const getChar = async () => {
     const url = "https://rickandmortyapi.com/api/character";
     const { data } = await axios.get(url);
     console.log(data.results);
     setCharacter(data.results);
   };
 
-  const seeDetails = () => {};
   useEffect(() => {
-    getData();
+    getChar();
   }, []);
+
+  // Episode data Fetching
+  const getEpisode = async () => {
+    const url = "https://rickandmortyapi.com/api/episode";
+    const { data } = await axios.get(url);
+    console.log(data.results);
+    setEpisode(data.results);
+  };
+
+  useEffect(() => {
+    getEpisode();
+  }, []);
+
+  // Locations data Fetching
+  const getLocation = async () => {
+    const url = "https://rickandmortyapi.com/api/location";
+    const { data } = await axios.get(url);
+    console.log(data.results);
+    setLocation(data.results);
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
+  const seeDetails = () => {};
   return (
     <div className="home-container">
       <div
@@ -52,9 +79,25 @@ const Home = () => {
         }}
         className="episode-container"
       >
-        {characters.map((item, index) => (
+        {episodes.map((item, index) => (
           <Card className="card-container" key={index}>
-            <Card.Img variant="top" src={item.image} />
+            <Card.Body>
+              <Card.Title>{item.name}</Card.Title>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
+
+      {/* Locations */}
+
+      <div
+        onClick={() => {
+          seeDetails();
+        }}
+        className="episode-container"
+      >
+        {locations.map((item, index) => (
+          <Card className="card-container" key={index}>
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
             </Card.Body>
