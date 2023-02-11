@@ -1,0 +1,7 @@
+.castDetails-container {
+  background-image: url("../../images/CastDetails/cast-details-background.png");
+}
+.cast-details {
+  display: flex;
+  justify-content: flex-start;
+}
