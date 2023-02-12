@@ -36,7 +36,7 @@ const Home = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToScroll: 2,
   };
 
   // Characters data Fetching
@@ -74,9 +74,97 @@ const Home = () => {
       <div className="logo">
         <img src={logo} alt="" />
       </div>
+      {/* Hero fashion */}
+      {/* <div className="hero-fashion">
+        <div className="the-ricky">
+          <img src={Bubble} alt="" />
+          <span className="white-text">
+            <h1>THE</h1>
+          </span>{" "}
+          <img src={portal} alt="" />{" "}
+          <span className="gradient-text">
+            <h1>RICKY</h1>
+          </span>
+          <div className="and-div">
+            <img src={pill} alt="" />{" "}
+            <span>
+              <h1>&</h1>
+            </span>
+          </div>
+        </div>
 
+        <div className="lower-text the-ricky">
+          <div className="morty-wiki-text">
+            <h1>
+              <span className="gradient-text">MORTY</span>{" "}
+              <span className="white-text">WIKI</span>
+            </h1>
+          </div>
+          <div>
+            <img src={Gun} alt="" />
+          </div>
+        </div>
+      </div> */}
+      {/* test */}
+      <div className="header-container">
+        <div className="upper-line">
+          <span className="header-title white-text white-space">The</span>
+          <img className="white-space" src={portal} alt="" />
+          <span className="header-title theme-text white-space">Rick</span>{" "}
+          <span className="header-title theme-text">&</span>
+        </div>
+        <div className="bubble">
+          <img src={Bubble} alt="" />
+        </div>
+        <div className="dash">
+          <img src={pill} alt="" />
+        </div>
+        <div className="second-line">
+          <span className="header-title white-text white-space">Morty</span>
+          <span className="header-title theme-text">wiki</span>
+        </div>
+        <div className="gun">
+          <img src={Gun} alt="" />
+        </div>
+        <div className="third-line">
+          <div className="watch-now-btn white-space">Watch now</div>
+          <p className="third-line-text">
+            Brilliant but boozy scientist Rick hijacks his fretful teenage
+            grandson, Morty, for wild escapades in other worlds and alternate
+            dimensions.
+          </p>
+        </div>
+
+        {/* <div className="the-ricky">
+          <img src={Bubble} alt="" />
+          <span className="white-text">
+            <h1>THE</h1>
+          </span>{" "}
+          <img src={portal} alt="" />{" "}
+          <span className="gradient-text">
+            <h1>RICKY</h1>
+          </span>
+          <div className="and-div">
+            <img src={pill} alt="" />{" "}
+            <span>
+              <h1>&</h1>
+            </span>
+          </div>
+        </div>
+
+        <div className="lower-text the-ricky">
+          <div className="morty-wiki-text">
+            <h1>
+              <span className="gradient-text">MORTY</span>{" "}
+              <span className="white-text">WIKI</span>
+            </h1>
+          </div>
+          <div>
+            <img src={Gun} alt="" />
+          </div>
+        </div> */}
+      </div>
       {/* Character */}
-
       <div className="meet-the-cast-text">
         <span className="text">
           <h4>Meet the Cast</h4>
@@ -85,28 +173,29 @@ const Home = () => {
           <Button>View All</Button>
         </Link>
       </div>
-
       <Slider {...characterSettings}>
         {characters.map((item, index) => (
           <Link to={`/castDetails/${item.id}`}>
-            <Card className="card-container theme-border" key={index}>
+            <Card
+              className="card-container sim-Shaped-card theme-border"
+              key={index}
+            >
               <Card.Img className="card-img" variant="top" src={item.image} />
               <Card.Body>
-                <Card.Title className="text">{item.name}</Card.Title>
+                <Card.Title className="text character-name">
+                  {item.name}
+                </Card.Title>
               </Card.Body>
             </Card>
           </Link>
         ))}
       </Slider>
-
       {/* Episode */}
-
       <div className="episodes-text">
         <span className="text">
           <h4>Episodes</h4>
         </span>
       </div>
-
       <Slider {...lowerSettings}>
         {episodes.map((item, index) => (
           <Card
@@ -120,9 +209,7 @@ const Home = () => {
           </Card>
         ))}
       </Slider>
-
       {/* Locations */}
-
       <div>
         <div className="locations-text">
           <span className="text">
@@ -137,7 +224,7 @@ const Home = () => {
               key={index}
             >
               <Card.Body>
-                <Card.Title className="text">#{index}</Card.Title>
+                <Card.Title className="text">#{index + 1}</Card.Title>
                 <Card.Title className="text">{item.name}</Card.Title>
               </Card.Body>
             </Card>
