@@ -6,11 +6,14 @@ import Location from "../../images/Icons/Location.png";
 import origin from "../../images/Icons/origin.png";
 import Redirect from "../../images/Icons/Redirect.png";
 import Species from "../../images/Icons/Species.png";
+import Vector from "../../images/Icons/Vector.png";
+import logo from "../../images/Logo.png";
+
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 // import Card from "react-bootstrap/Card";
 import "./castDetails.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const EpisodeName = ({ url }) => {
   const [epNm, setEpNm] = useState("");
@@ -49,6 +52,11 @@ const CastDetails = () => {
 
   return (
     <div className="castDetails-container">
+      <Link to="/">
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
+      </Link>
       {character && (
         <div className="cast-details">
           <div className="left-side">
@@ -68,7 +76,10 @@ const CastDetails = () => {
                   <img src={Status} alt="" />
                 </div>
                 <div>
-                  <span>Status</span> <br /> <span>{character.status}</span>
+                  <span>
+                    <small>Status</small>
+                  </span>{" "}
+                  <br /> <span>{character.status}</span>
                 </div>
               </div>
 
@@ -77,7 +88,10 @@ const CastDetails = () => {
                   <img src={Species} alt="" />
                 </div>
                 <div>
-                  <span>Species</span> <br /> <span>{character.species}</span>
+                  <span>
+                    <small>Species</small>
+                  </span>{" "}
+                  <br /> <span>{character.species}</span>
                 </div>
               </div>
 
@@ -99,7 +113,11 @@ const CastDetails = () => {
               </div>
               <div>
                 <div>
-                  <span>Origin</span> <br />
+                  <span>
+                    {" "}
+                    <small>Origin</small>{" "}
+                  </span>{" "}
+                  <br />
                   <div className="second-part-lower">
                     <span>{character?.origin?.name}</span>
                     <div className="share-icon">
@@ -115,7 +133,10 @@ const CastDetails = () => {
               </div>
               <div>
                 <div>
-                  <span>Last Known Location</span> <br />
+                  <span>
+                    <small>Last Known Location</small>
+                  </span>{" "}
+                  <br />
                   <div className="second-part-lower">
                     <span>{character?.origin?.name}</span>
                     <div className="share-icon">
@@ -127,11 +148,14 @@ const CastDetails = () => {
             </div>
             <div className="fourth-part theme-border">
               <div className="details-icon">
-                <img src={Status} alt="" />
+                <img src={Vector} alt="" />
               </div>
               <div>
                 <div>
-                  <span>Episodes (S)</span> <br />
+                  <span>
+                    <small> Episodes (S)</small>
+                  </span>{" "}
+                  <br />
                   <div className="fourth-part-lower">
                     <ul>
                       {character.episode &&
