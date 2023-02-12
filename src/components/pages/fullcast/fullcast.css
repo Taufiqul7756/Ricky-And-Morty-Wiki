@@ -1,5 +1,27 @@
+body {
+  background-image: url("../../../images/Cast/cast-background.png");
+}
+
 .full-cast-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
+}
+.logo {
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-border {
+  border-radius: 8px;
+  border-image: linear-gradient(
+      rgba(132, 247, 41, 0.7),
+      rgba(21, 191, 253, 0.7)
+    )
+    30;
+  border-width: 4px;
+  border-style: solid;
+}
+.the-cast-text {
+  color: rgba(20, 217, 229, 1);
 }

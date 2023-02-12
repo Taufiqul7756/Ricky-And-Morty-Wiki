@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import logo from "../../../images/Logo.png";
 
 import "./fullcast.css";
 
@@ -20,18 +21,29 @@ export default function FullCast() {
   }, []);
 
   return (
-    <div className="full-cast-container">
-      {characters &&
-        characters.map((item, index) => (
-          <Link to={`/castDetails/${item.id}`}>
-            <Card className="card-container" key={index}>
-              <Card.Img variant="top" src={item.image} />
-              <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-              </Card.Body>
-            </Card>
-          </Link>
-        ))}
+    <div>
+      <Link to="/">
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
+      </Link>
+
+      <span className="the-cast-text">
+        <h2>The Cast</h2>
+      </span>
+      <div className="full-cast-container ">
+        {characters &&
+          characters.map((item, index) => (
+            <Link to={`/castDetails/${item.id}`}>
+              <Card className="card-container theme-border" key={index}>
+                <Card.Img variant="top" src={item.image} />
+                <Card.Body>
+                  <Card.Title>{item.name}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Link>
+          ))}
+      </div>
     </div>
   );
 }
