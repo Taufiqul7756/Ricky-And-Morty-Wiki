@@ -30,8 +30,6 @@ const Home = () => {
     slidesToScroll: 3,
   };
 
-  // const [hideCast, setHideCast] = useState(false);
-
   // Characters data Fetching
   const getChar = async () => {
     const url = "https://rickandmortyapi.com/api/character";
@@ -40,10 +38,6 @@ const Home = () => {
     setCharacter(data.results);
   };
 
-  useEffect(() => {
-    getChar();
-  }, []);
-
   // Episode data Fetching
   const getEpisode = async () => {
     const url = "https://rickandmortyapi.com/api/episode";
@@ -51,10 +45,6 @@ const Home = () => {
     console.log(data.results);
     setEpisode(data.results);
   };
-
-  useEffect(() => {
-    getEpisode();
-  }, []);
 
   // Locations data Fetching
   const getLocation = async () => {
@@ -65,22 +55,30 @@ const Home = () => {
   };
 
   useEffect(() => {
+    getChar();
+    getEpisode();
     getLocation();
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="container">
       <div className="logo">
         <img src={logo} alt="" />
       </div>
 
       {/* Character */}
+      <div className="meet-the-cast-text">
+        <h4>Meet the Cast</h4>
+        <Link to="fullcast">
+          <Button>View All</Button>
+        </Link>
+      </div>
 
       <Slider {...settings}>
         {characters.map((item, index) => (
           <Link to={`/castDetails/${item.id}`}>
-            <Card className="card-container" key={index}>
-              <Card.Img variant="top" src={item.image} />
+            <Card className="card-container theme-border" key={index}>
+              <Card.Img className="card-img" variant="top" src={item.image} />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
               </Card.Body>
@@ -88,35 +86,6 @@ const Home = () => {
           </Link>
         ))}
       </Slider>
-      <div>
-        {
-          <div className="meet-the-cast-text">
-            <h4>Meet the Cast</h4>
-            <Link to="fullcast">
-              <Button
-              // onClick={() => {
-              //   setHideCast(characters.slice(0, 5));
-              //   setHideCast(true);
-              // }}
-              >
-                View All
-              </Button>
-            </Link>
-          </div>
-        }
-        <div className="characters-container">
-          {characters.map((item, index) => (
-            <Link to={`/castDetails/${item.id}`}>
-              <Card className="card-container" key={index}>
-                <Card.Img variant="top" src={item.image} />
-                <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
-                </Card.Body>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Episode */}
 

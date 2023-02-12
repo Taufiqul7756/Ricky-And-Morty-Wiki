@@ -1,7 +1,23 @@
-body {
-  padding: 10px;
-  background-image: url("../../images/HomePage/home-background.png");
+/* @font-face {
+  font-family: TTTravel-Black;
+  src: url("/public/TTTravels-Black.ttf");
+} */
+.logo img {
+  height: 45px;
 }
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  padding: 0 100px;
+  width: auto;
+  /* background-image: url("../../images/HomePage/home-background.png"); */
+}
+
+/* Characters  */
+
 .characters-container {
   display: flex;
   flex-direction: row;
@@ -10,7 +26,57 @@ body {
 }
 .card-container {
   border: 1px solid black;
+  border-radius: 10px 10px 50px 10px;
   padding: 5px;
+  max-width: 190px;
 }
-.card-container img {
+
+.card-img {
+  width: 170px;
+  height: 150px;
 }
+
+.meet-the-cast-text {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  /* font-family: TTTravels-Black; */
+}
+
+/* Episodes */
+
+.episode-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.slick-prev {
+  display: none !important;
+}
+
+/* Locations */
+.location-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+
+.theme-border {
+  border-radius: 8px;
+  border-image: linear-gradient(
+      rgba(132, 247, 41, 0.7),
+      rgba(21, 191, 253, 0.7)
+    )
+    30;
+  border-width: 4px;
+  border-style: solid;
+}
+
+/* .slick-slide {
+  margin: 0 24px !important;
+  width: auto !important;
+} */
