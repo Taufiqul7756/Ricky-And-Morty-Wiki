@@ -5,7 +5,7 @@ body {
 .full-cast-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  gap: 68px 16px;
 }
 .logo {
   justify-content: center;
@@ -24,4 +24,13 @@ body {
 }
 .the-cast-text {
   color: rgba(20, 217, 229, 1);
+}
+
+/* responsiveness */
+
+@media only screen and (max-width: 768px) {
+  .full-cast-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 36px;
+  }
 }
