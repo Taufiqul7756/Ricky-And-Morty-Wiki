@@ -21,12 +21,21 @@ const Home = () => {
   const [episodes, setEpisode] = useState([]);
   const [locations, setLocation] = useState([]);
 
-  const settings = {
+  const characterSettings = {
     dots: false,
     centerMode: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
+    slidesToScroll: 3,
+  };
+
+  const lowerSettings = {
+    dots: false,
+    centerMode: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
     slidesToScroll: 3,
   };
 
@@ -67,20 +76,23 @@ const Home = () => {
       </div>
 
       {/* Character */}
+
       <div className="meet-the-cast-text">
-        <h4>Meet the Cast</h4>
+        <span className="text">
+          <h4>Meet the Cast</h4>
+        </span>
         <Link to="fullcast">
           <Button>View All</Button>
         </Link>
       </div>
 
-      <Slider {...settings}>
+      <Slider {...characterSettings}>
         {characters.map((item, index) => (
           <Link to={`/castDetails/${item.id}`}>
             <Card className="card-container theme-border" key={index}>
               <Card.Img className="card-img" variant="top" src={item.image} />
               <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
+                <Card.Title className="text">{item.name}</Card.Title>
               </Card.Body>
             </Card>
           </Link>
@@ -89,36 +101,48 @@ const Home = () => {
 
       {/* Episode */}
 
-      <div>
-        <div className="episodes-text">
+      <div className="episodes-text">
+        <span className="text">
           <h4>Episodes</h4>
-        </div>
-        <div className="episode-container">
-          {episodes.map((item, index) => (
-            <Card className="card-container" key={index}>
-              <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
+        </span>
       </div>
+
+      <Slider {...lowerSettings}>
+        {episodes.map((item, index) => (
+          <Card
+            className=" card-episode card-container theme-border"
+            key={index}
+          >
+            <Card.Body>
+              <Card.Title className="text">{item.episode}</Card.Title>
+              <Card.Title className="text">{item.name}</Card.Title>
+            </Card.Body>
+          </Card>
+        ))}
+      </Slider>
 
       {/* Locations */}
 
       <div>
         <div className="locations-text">
-          <h4>Locations</h4>
+          <span className="text">
+            <h4>Locations</h4>
+          </span>
         </div>
-        <div className="location-container">
+
+        <Slider {...lowerSettings}>
           {locations.map((item, index) => (
-            <Card className="card-container" key={index}>
+            <Card
+              className="card-container card-episode location-container theme-border"
+              key={index}
+            >
               <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
+                <Card.Title className="text">#{index}</Card.Title>
+                <Card.Title className="text">{item.name}</Card.Title>
               </Card.Body>
             </Card>
           ))}
-        </div>
+        </Slider>
       </div>
     </div>
   );
