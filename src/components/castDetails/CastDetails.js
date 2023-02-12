@@ -12,6 +12,21 @@ import Species from "../../images/Icons/Species.png";
 import "./castDetails.css";
 import { useParams } from "react-router-dom";
 
+const EpisodeName = ({ url }) => {
+  const [epNm, setEpNm] = useState("");
+
+  useEffect(() => {
+    getEpisodeName(url);
+  }, []);
+
+  const getEpisodeName = async (url) => {
+    const { data } = await axios.get(url);
+    setEpNm(data.name);
+  };
+
+  return <li>{epNm}</li>;
+};
+
 const CastDetails = () => {
   const [character, setCharacter] = useState();
   console.log(character);
@@ -37,7 +52,10 @@ const CastDetails = () => {
       {character && (
         <div className="cast-details">
           <div className="left-side">
-            <h2 className="character-name">{character.name}</h2>
+            <span className="char-name">
+              <h2 className="character-name">{character.name}</h2>
+            </span>
+
             <div className="character-img theme-border">
               <img src={character.image} alt="" />
             </div>
@@ -117,7 +135,9 @@ const CastDetails = () => {
                   <div className="fourth-part-lower">
                     <ul>
                       {character.episode &&
-                        character.episode.map((epd, index) => <li>{epd}</li>)}
+                        character.episode.map((epd, index) => (
+                          <EpisodeName key={index} url={epd} />
+                        ))}
                     </ul>
                   </div>
                 </div>

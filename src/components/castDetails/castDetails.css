@@ -1,8 +1,9 @@
 .castDetails-container {
   padding: 64px;
-  mix-blend-mode: saturation;
-  opacity: 0.6;
+  /* mix-blend-mode: saturation; */
+  opacity: 100;
   min-height: 100vh;
+  color: white;
   background-image: url("../../images/CastDetails/cast-details-background.png");
   /* background-image: linear-gradient(
       rgba(226, 226, 241, 0.5),
@@ -14,6 +15,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.char-name {
+  color: rgba(20, 217, 229, 1);
+}
+
 .card-container {
   justify-content: center;
 }
