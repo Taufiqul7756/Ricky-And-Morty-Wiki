@@ -108,7 +108,9 @@ const Home = () => {
       {/* test */}
       <div className="header-container">
         <div className="upper-line">
-          <span className="header-title white-text white-space">The</span>
+          <span className="header-title white-text white-space italic-text">
+            The
+          </span>
           <img className="white-space" src={portal} alt="" />
           <span className="header-title theme-text white-space">Rick</span>{" "}
           <span className="header-title theme-text">&</span>
@@ -120,8 +122,10 @@ const Home = () => {
           <img src={pill} alt="" />
         </div>
         <div className="second-line">
-          <span className="header-title white-text white-space">Morty</span>
-          <span className="header-title theme-text">wiki</span>
+          <span className="header-title theme-text white-space">Morty</span>
+          <span className="header-title white-text italic-text white-space">
+            wiki
+          </span>
         </div>
         <div className="gun">
           <img src={Gun} alt="" />

@@ -15,17 +15,20 @@
 
 .header-title {
   font-family: "TT Travels";
-  font-style: italic;
+
   font-weight: 800;
   font-size: 128px;
   line-height: 154px;
   text-transform: uppercase;
   z-index: 100;
   position: relative;
-  text-shadow: 0 0 7px rgba(157, 254, 0, 1), 0 0 10px rgba(157, 254, 0, 1),
-    0 0 21px rgba(157, 254, 0, 1), 0 0 42px rgba(20, 217, 229, 1),
-    0 0 82px rgba(20, 217, 229, 1), 0 0 92px rgba(20, 217, 229, 1),
+  text-shadow: 0 0 1px rgba(157, 254, 0, 1), 0 0 0px rgba(157, 254, 0, 1),
+    0 0 0px rgba(157, 254, 0, 1), 0 0 0px rgba(20, 217, 229, 1),
+    0 0 0px rgba(20, 217, 229, 1), 0 0 0px rgba(20, 217, 229, 1),
     0 0 102px rgba(20, 217, 229, 1), 0 0 151px rgba(20, 217, 229, 1);
+}
+.italic-text {
+  font-style: italic;
 }
 
 .white-text {
