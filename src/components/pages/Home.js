@@ -76,37 +76,7 @@ const Home = () => {
         <img src={logo} alt="" />
       </div>
       {/* Hero fashion */}
-      {/* <div className="hero-fashion">
-        <div className="the-ricky">
-          <img src={Bubble} alt="" />
-          <span className="white-text">
-            <h1>THE</h1>
-          </span>{" "}
-          <img src={portal} alt="" />{" "}
-          <span className="gradient-text">
-            <h1>RICKY</h1>
-          </span>
-          <div className="and-div">
-            <img src={pill} alt="" />{" "}
-            <span>
-              <h1>&</h1>
-            </span>
-          </div>
-        </div>
 
-        <div className="lower-text the-ricky">
-          <div className="morty-wiki-text">
-            <h1>
-              <span className="gradient-text">MORTY</span>{" "}
-              <span className="white-text">WIKI</span>
-            </h1>
-          </div>
-          <div>
-            <img src={Gun} alt="" />
-          </div>
-        </div>
-      </div> */}
-      {/* test */}
       <div className="header-container">
         <div className="upper-line">
           <span className="header-title white-text white-space italic-text">
@@ -145,35 +115,6 @@ const Home = () => {
             dimensions.
           </p>
         </div>
-
-        {/* <div className="the-ricky">
-          <img src={Bubble} alt="" />
-          <span className="white-text">
-            <h1>THE</h1>
-          </span>{" "}
-          <img src={portal} alt="" />{" "}
-          <span className="gradient-text">
-            <h1>RICKY</h1>
-          </span>
-          <div className="and-div">
-            <img src={pill} alt="" />{" "}
-            <span>
-              <h1>&</h1>
-            </span>
-          </div>
-        </div>
-
-        <div className="lower-text the-ricky">
-          <div className="morty-wiki-text">
-            <h1>
-              <span className="gradient-text">MORTY</span>{" "}
-              <span className="white-text">WIKI</span>
-            </h1>
-          </div>
-          <div>
-            <img src={Gun} alt="" />
-          </div>
-        </div> */}
       </div>
       {/* Character */}
       <div className="meet-the-cast-text">

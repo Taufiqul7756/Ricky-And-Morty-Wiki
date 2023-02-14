@@ -103,7 +103,6 @@
   line-height: 24px;
   color: #fbf8f3;
   justify-content: center;
-  /* identical to box height */
 }
 
 .view-all-btn {
@@ -188,7 +187,6 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  /* font-family: TTTravels-Black; */
 }
 
 /* Episodes */
@@ -231,15 +229,16 @@
   color: white;
 }
 
-/* .slick-slide {
-  margin: 0 24px !important;
-  width: auto !important;
-} */
-
 /* responsiveness */
 
 @media only screen and (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 2px;
+  }
+
+  .slick-slide {
+    margin: 10px 24px !important;
+    width: auto !important;
+    grid-template-columns: 2, 1fr;
   }
 }
