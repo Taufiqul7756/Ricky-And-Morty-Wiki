@@ -8,6 +8,7 @@ import Gun from "../../images/HomePage/Gun.png";
 import pill from "../../images/HomePage/pill.png";
 import portal from "../../images/HomePage/portal.png";
 import logo from "../../images/Logo.png";
+import play from "../../images/Icons/button.png";
 
 import "./Home.css";
 import { Button } from "react-bootstrap";
@@ -35,8 +36,8 @@ const Home = () => {
     centerMode: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: 5,
+    slidesToScroll: 3,
   };
 
   // Characters data Fetching
@@ -131,7 +132,13 @@ const Home = () => {
           <img src={Gun} alt="" />
         </div>
         <div className="third-line">
-          <div className="watch-now-btn white-space">Watch now</div>
+          <div className="watchNow-btn">
+            <button className="watch-now-btn  white-space">
+              {" "}
+              <img src={play} alt="" />
+              Watch Now
+            </button>
+          </div>
           <p className="third-line-text">
             Brilliant but boozy scientist Rick hijacks his fretful teenage
             grandson, Morty, for wild escapades in other worlds and alternate
@@ -174,16 +181,13 @@ const Home = () => {
           <h4>Meet the Cast</h4>
         </span>
         <Link to="fullcast">
-          <Button>View All</Button>
+          <Button className="view-all-btn">View All</Button>
         </Link>
       </div>
       <Slider {...characterSettings}>
         {characters.map((item, index) => (
           <Link to={`/castDetails/${item.id}`}>
-            <Card
-              className="card-container sim-Shaped-card theme-border"
-              key={index}
-            >
+            <Card className="card-container  theme-border" key={index}>
               <Card.Img className="card-img" variant="top" src={item.image} />
               <Card.Body>
                 <Card.Title className="text character-name">
