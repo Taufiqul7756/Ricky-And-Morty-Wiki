@@ -5,16 +5,11 @@
 
 .castDetails-container {
   padding: 0 120px;
-  /* mix-blend-mode: saturation; */
   opacity: 100;
   min-height: 100vh;
   color: white;
   background-image: url("../../images/CastDetails/cast-details-background.png");
-  /* background-image: linear-gradient(
-      rgba(226, 226, 241, 0.5),
-      rgba(193, 236, 248, 0.5)
-    ),
-    url("../../images/CastDetails/cast-details-background.png"); */
+  background-repeat: repeat;
 }
 .cast-details {
   display: grid;
@@ -96,7 +91,7 @@
 
 /* responsiveness */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   .container {
     padding: 0 24px;
   }
