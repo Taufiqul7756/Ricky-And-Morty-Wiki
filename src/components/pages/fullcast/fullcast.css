@@ -1,5 +1,8 @@
 body {
-  background-image: url("../../../images/Cast/cast-background.png");
+  background-image: url("../../../images/Cast/cast-background.png"),
+    url("../../../images/Cast/cast-star.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
 }
 
 .full-cast-container {

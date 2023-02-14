@@ -22,34 +22,28 @@ export default function FullCast() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <Link to="/">
         <div className="logo">
           <img src={logo} alt="" />
         </div>
       </Link>
 
-      <div className="container">
-        <span className="the-cast-text">
-          <h2>The Cast</h2>
-        </span>
-        <div className="full-cast-container ">
-          {characters &&
-            characters.map((item, index) => (
-              <Link to={`/castDetails/${item.id}`}>
-                <Card className="card-container theme-border" key={index}>
-                  <Card.Img
-                    className="card-img"
-                    variant="top"
-                    src={item.image}
-                  />
-                  <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Link>
-            ))}
-        </div>
+      <span className="the-cast-text">
+        <h2>The Cast</h2>
+      </span>
+      <div className="full-cast-container ">
+        {characters &&
+          characters.map((item, index) => (
+            <Link to={`/castDetails/${item.id}`}>
+              <Card className="card-container theme-border" key={index}>
+                <Card.Img className="card-img" variant="top" src={item.image} />
+                <Card.Body>
+                  <Card.Title>{item.name}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Link>
+          ))}
       </div>
     </div>
   );
