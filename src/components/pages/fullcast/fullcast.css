@@ -1,7 +1,6 @@
 body {
-  background-image: url("../../../images/Cast/cast-background.png"),
-    url("../../../images/Cast/cast-star.png");
-  background-repeat: no-repeat, no-repeat;
+  background-image: url("../../../images/Cast/cast-background.png");
+  background-repeat: repeat, no-repeat;
   background-position: top, bottom;
 }
 
@@ -36,5 +35,16 @@ body {
   .full-cast-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px 36px;
+  }
+}
+
+@media screen and (max-width: 368px) and (min-width: 0px) {
+  .full-cast-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px 36px;
+  }
+
+  .logo img {
+    height: 25px;
   }
 }
