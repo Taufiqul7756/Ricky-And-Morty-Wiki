@@ -9,9 +9,6 @@ import Species from "../../images/Icons/Species.png";
 import Vector from "../../images/Icons/Vector.png";
 import logo from "../../images/Logo.png";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// import Card from "react-bootstrap/Card";
 import "./castDetails.css";
 import { Link, useParams } from "react-router-dom";
 
