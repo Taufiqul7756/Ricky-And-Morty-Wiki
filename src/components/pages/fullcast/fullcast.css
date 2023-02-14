@@ -1,7 +1,14 @@
-body {
+/* body {
   background-image: url("../../../images/Cast/cast-background.png");
   background-repeat: repeat, no-repeat;
   background-position: top, bottom;
+} */
+
+.fullCast-container {
+  background-image: url("../../../images/Cast/cast-background.png");
+  background-repeat: repeat;
+  padding: 0 50px;
+  max-width: 1400px;
 }
 
 .full-cast-container {
@@ -31,14 +38,17 @@ body {
 
 /* responsiveness */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 500px) {
   .full-cast-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px 36px;
   }
+  .logo img {
+    height: 25px;
+  }
 }
 
-@media screen and (max-width: 368px) and (min-width: 0px) {
+@media screen and (max-width: 500px) and (min-width: 365px) {
   .full-cast-container {
     grid-template-columns: repeat(1, 1fr);
     gap: 32px 36px;
@@ -46,5 +56,32 @@ body {
 
   .logo img {
     height: 25px;
+  }
+}
+
+@media screen and (max-width: 365px) and (min-width: 0) {
+  .full-cast-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px 36px;
+  }
+
+  .logo img {
+    height: 25px;
+  }
+}
+@media screen and (max-width: 1350px) and (min-width: 768px) {
+  .full-cast-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 36px;
+  }
+
+  .fullCast-container {
+    background-repeat: repeat;
+    padding: 0 50px;
+    max-width: 1400px;
+  }
+
+  .logo img {
+    height: 35px;
   }
 }

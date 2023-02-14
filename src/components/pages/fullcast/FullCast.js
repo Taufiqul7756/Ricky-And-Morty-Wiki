@@ -22,7 +22,7 @@ export default function FullCast() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="fullCast-container">
       <Link to="/">
         <div className="logo">
           <img src={logo} alt="" />
