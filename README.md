@@ -2,7 +2,7 @@
 
 
 <ol>
-<h3> The website Ricky and Morty Wiki designed by <h3/> 
+<h2> The website Ricky and Morty Wiki designed by <h2/> 
 <li>React Bootstrap v2.7.1</li>
   <li>Vanilla CSS</li>
   <li>React.js</li>
